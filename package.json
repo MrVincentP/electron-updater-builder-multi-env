@@ -1,0 +1,23 @@
+{
+  "name": "electron-updater-builder-multi-env",
+  "version": "1.0.0",
+  "description": "an electron demo with electron-builder and electron-updater, it depends on Self-developed multi-environment configuration.",
+  "author": "vincent.pan",
+  "main": "main.js",
+  "scripts": {
+    "start": "chcp 65001 && cross-env NODE_ENV=dev electron . --trace-deprecation --win --config config/config.js",
+    "build-domesticApp-test": "cross-env NODE_ENV=test electron-builder --win --config config/config.js",
+    "build-domesticApp-prod": "cross-env NODE_ENV=prod electron-builder --win --config config/config.js",
+    "build-globalApp-test": "cross-env NODE_ENV=test electron-builder --win --config config/config.js",
+    "build-globalApp-prod": "cross-env NODE_ENV=prod electron-builder --win --config config/config.js"
+  },
+  "devDependencies": {
+    "electron": "^30.0.3",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "cross-env": "^7.0.3",
+    "electron-updater": "^6.1.8"
+  }
+}
